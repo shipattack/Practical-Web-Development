@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My home page</title>
+  </head>
+  <body>
+    <h1>Welcome to Practical Web Dev</h1>
+    <h3>Fall 2026</h3>
+    <h4>HELLO!</h4>
+
+    <p> here is a paragraph</p>
+
+    <button onclick="alert('Boom!');">
+        DO NOT PRESS
+    </button>
+
+</body>
+</html>
