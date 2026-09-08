@@ -1,198 +1,20 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    min-height: 100vh;
-
-    font-family: Arial, Helvetica, sans-serif;
-
+    background-color: black;
     color: white;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #172b65,
-            #050817 55%,
-            #02030a
-        );
-
-    overflow-x: hidden;
-}
-
-header {
     text-align: center;
-    padding: 50px 20px 30px;
+    font-family: Arial, sans-serif;
 }
 
-header h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    margin-bottom: 15px;
-
-    text-shadow:
-        0 0 10px #4d8cff,
-        0 0 30px rgba(77, 140, 255, 0.5);
+h1 {
+    color: #66ccff;
 }
 
-header p {
-    color: #b8c7e8;
-    font-size: 1.1rem;
+p {
+    font-size: 18px;
 }
 
-.solar-system {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-
-    padding: 20px;
-}
-#solar-system-image {
-    display: block;
-
+#solar-system {
     width: 100%;
     max-width: 1280px;
-
     height: auto;
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 0 40px rgba(40, 100, 255, 0.25);
-}
-.instructions {
-    width: min(700px, 90%);
-
-    margin: 40px auto;
-
-    padding: 30px;
-
-    text-align: center;
-
-    background: rgba(14, 24, 57, 0.85);
-
-    border: 1px solid rgba(120, 160, 255, 0.25);
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 10px 40px rgba(0, 0, 0, 0.25);
-}
-.instructions h2 {
-    margin-bottom: 12px;
-
-    color: #8dc5ff;
-}
-.instructions p {
-    color: #c0cae2;
-
-    line-height: 1.6;
-}
-
-.planet-links {
-    width: min(1000px, 90%);
-
-    margin: 60px auto;
-
-    text-align: center;
-}
-.planet-links h2 {
-    margin-bottom: 30px;
-
-    font-size: 2rem;
-
-    color: #dce8ff;
-}
-
-.planet-grid {
-    display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));
-    gap: 15px;
-}
-
-
-.planet-grid a {
-    padding: 20px;
-
-    color: white;
-
-    text-decoration: none;
-
-    background:
-        linear-gradient(
-            145deg,
-            #14244e,
-            #080e23
-        );
-
-    border:
-        1px solid rgba(110, 160, 255, 0.2);
-
-    border-radius: 12px;
-
-    font-weight: bold;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.planet-grid a:hover {
-    transform: translateY(-5px);
-
-    background:
-        linear-gradient(
-            145deg,
-            #1d3978,
-            #0c1533
-        );
-
-    border-color: #5795ff;
-
-    box-shadow:
-        0 8px 25px rgba(60, 120, 255, 0.25);
-}
-footer {
-    margin-top: 60px;
-
-    padding: 30px;
-
-    text-align: center;
-
-    color: #7180a5;
-
-    background: #02040c;
-
-    border-top:
-        1px solid rgba(255, 255, 255, 0.08);
-
-    line-height: 1.8;
-}
-@media (max-width: 600px) {
-
-    header {
-        padding: 35px 15px 20px;
-    }
-    header p {
-        font-size: 0.9rem;
-    }.solar-system {
-        padding: 5px;
-    }.instructions {
-        padding: 22px 15px;
-    }.planet-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }.planet-grid a {
-        padding: 15px 8px;
-        font-size: 0.9rem;
-    }
 }
