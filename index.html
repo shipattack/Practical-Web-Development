@@ -1,16 +1,81 @@
 <!DOCTYPE html>
-<html lang="en"> 
-<head> 
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar System Explorer</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="image/favicon.ico">
-    </head> 
-    <body>
+</head>
+<body>
     <h1>Solar System Explorer</h1>
-    <p>Click on any object to discover more about our cosmic neighborhood.</p>
-    <img src="image/solar_system.png" alt="Map of the Solar System" usemap="#solar-system" id="solar-system-img">
+    <p>Click on an object in the Solar System to learn more about it.</p>
+    <img src="image/solar_system.png" alt="Map of the Solar System" usemap="#solar-system-map" id="solar-system-image">
+            
+<map name="solar-system-map" id="solar-system-map">
+    <area shape="circle" coords="0,400,235" href="solar_system/sun.html" alt="Sun" title="Sun">
+    <area shape="circle" coords="407,526,38" href="solar_system/mercury.html" alt="Mercury" title="Mercury">
+    <area shape="circle" coords="508,300,50" href="solar_system/venus.html" alt="Venus" title="Venus">
+    <area shape="circle" coords="612,447,53" href="solar_system/earth.html" alt="Earth" title="Earth">
+    <area shape="circle" coords="642,367,18" href="solar_system/moon.html" alt="Moon" title="Moon">
+    <area shape="circle" coords="682,576,33" href="solar_system/mars.html" alt="Mars" title="Mars">
+    <area shape="circle" coords="820,344,90" href="solar_system/jupiter.html" alt="Jupiter" title="Jupiter">
+    <area shape="circle" coords="925,113,85" href="solar_system/saturn.html" alt="Saturn" title="Saturn">
+    <area shape="circle" coords="1066,515,43" href="solar_system/uranus.html" alt="Uranus" title="Uranus">
+    <area shape="circle" coords="1134,201,43" href="solar_system/neptune.html" alt="Neptune" title="Neptune">
+    <area shape="circle" coords="1230,360,22" href="solar_system/pluto.html" alt="Pluto" title="Pluto">
+</map>
 
-<map name="solar-system" id="solar-system">
-    
+        </section>
+        <section class="instructions">
+            <h2>Explore the Solar System</h2>
+            <p>Click on the Sun, planets, Moon, or Pluto to discover interesting facts about them.</p>
+        </section>
+        <section class="planet-links">
+
+            <h2>Explore by Object</h2>
+
+            <div class="planet-grid">
+                <a href="solar_system/sun.html"> Sun</a>
+                <a href="solar_system/mercury.html"> Mercury</a>
+                <a href="solar_system/venus.html"> Venus</a>
+                <a href="solar_system/earth.html"> Earth</a>
+                <a href="solar_system/moon.html"> Moon</a>
+                <a href="solar_system/mars.html"> Mars</a>
+                <a href="solar_system/jupiter.html"> Jupiter</a>
+                <a href="solar_system/saturn.html"> Saturn</a>
+                <a href="solar_system/uranus.html"> Uranus</a>
+                <a href="solar_system/neptune.html"> Neptune</a>
+                <a href="solar_system/pluto.html"> Pluto</a>
+            </div>
+
+        </section>
+
+    </main>
+    <footer>
+
+        <p>Solar System Explorer</p>
+        <p>Educational Project</p>
+
+    </footer>
+    <script>
+        const image = document.getElementById("solar-system-image");
+        const areas = document.querySelectorAll("#solar-system-map area");
+        areas.forEach(area => {area.dataset.originalCoords = area.coords;});
+        function resizeImageMap() {
+            if (!image.naturalWidth) {
+                return;
+            }
+            const scale = image.clientWidth / image.naturalWidth;
+            areas.forEach(area => {const original = area.dataset.originalCoords.split(",").map(Number);
+                const scaled = original.map(value => Math.round(value * scale));
+                area.coords = scaled.join(",");
+            });
+        }
+        image.addEventListener("load", resizeImageMap);
+        window.addEventListener("resize", resizeImageMap);
+        if (image.complete) {
+            resizeImageMap();
+        }
+</script>
+</body>
